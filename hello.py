@@ -83,3 +83,67 @@ class Solution(object):
 myObj = Solution()
 
 print(myObj.removeElement([3, 2, 2, 3], 3))
+
+pattern = ""
+for i in range(0, 5):
+    for j in range(0, 5):
+        if i + 1 == j + 1:
+            for times in range(0, i + 1):
+                pattern = pattern + "*"
+        print(pattern)
+        pattern = ""
+
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+newarr = arr.reshape(2, 3, 2)
+
+print(newarr)
+
+
+print(dt.datetime.now)
+
+
+required_numbers = input(
+    "Enter the numbers you want to add in the list and tuples separated by commas\n"
+)
+
+for index, value in enumerate(required_numbers):
+    if index == 0:
+        my_list = list(value)
+    elif index % 2 == 0:
+        my_list.append(value)
+
+print(my_list)
+print(tuple(my_list))
+
+
+file_name = input("Enter the file name\n")
+
+for index, character in enumerate(file_name):
+    if character == ".":
+        print(f"The file format is {file_name[index+1:]}")
+
+color_list = ["Red", "Green", "White", "Black"]
+
+print(color_list[0], color_list[-1])
+
+exam_st_date = (11, 12, 2014)
+
+# dd//MM/yyyy
+
+date_list = list(exam_st_date)
+print(f"{date_list[0]} / {date_list[1]} / {date_list[2]}")
+
+
+value = input("enter value\n")
+
+double_digits = value * 2
+three_digits = value * 3
+
+sum = int(value) + int(double_digits) + int(three_digits)
+
+print(sum)
+
+
+print(int.__doc__)
