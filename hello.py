@@ -147,3 +147,93 @@ print(sum)
 
 
 print(int.__doc__)
+import calendar as c
+
+
+# print(c.month(2024, 7))
+
+date1 = (2014, 7, 2)
+date2 = (2014, 7, 11)
+
+mylist1 = list(date1)
+mylist2 = list(date2)
+
+if mylist1[2] > mylist2[2]:
+    resultdays = mylist1[2] - mylist2[2]
+
+
+else:
+    resultdays = mylist2[2] - mylist1[2]
+
+number = 18
+result = number - 17
+if number > 17:
+    result *= 2
+    print(result)
+else:
+    print(result)
+
+
+a = [1, 2, 3, 4, 5, 7, 4, 4, 9, 8]
+
+count = 0
+
+for number in a:
+    if number == 4:
+        count = count + 1
+
+print(count)
+
+
+vowels = ["a", "e", "i", "o", "u"]
+
+char_to_check = input("Kindly enter the character you want to check\n")
+
+(
+    print("Yes the given character is a vowel")
+    if char_to_check in vowels
+    else print("No it is not a vowel")
+)
+
+key = "@"
+histogram_pattern = [2, 4, 16, 8]
+
+for everysinglePattern in histogram_pattern:
+    print(key * everysinglePattern)
+    print("\n")
+
+color_list_1 = set(["White", "Black", "Red"])
+color_list_2 = set(["Red", "Green"])
+
+dif = color_list_1.difference(color_list_2)
+print(dif)
+
+
+def duplicate(lst):
+    try:
+        lst2 = []
+        seen = lst2
+        for item in lst:
+            if item in seen:
+                return True
+            seen.append(item)
+        return False
+    except:
+        print("Error")
+
+
+def number_from_user(lst):
+    n = input("enter how many number you want to add in a list: ")
+    for x in range(int(n)):
+        number = input("enter number  to add in list: ")
+        lst.append(5)
+
+
+lst = []
+number_from_user(lst)
+if duplicate(lst):
+    sum = 0
+    print(sum)
+else:
+    adition = sum(lst)
+    print(adition)
