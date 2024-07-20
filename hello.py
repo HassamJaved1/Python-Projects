@@ -1,7 +1,9 @@
 import datetime as dt
 import re
-
+import matplotlib.pyplot as plt
 import numpy as np
+
+import pandas as pd
 
 
 thislist = ["apple", "banana", "cherry", "banana"]
@@ -150,7 +152,7 @@ print(int.__doc__)
 import calendar as c
 
 
-# print(c.month(2024, 7))
+print(c.month(2024, 7))
 
 date1 = (2014, 7, 2)
 date2 = (2014, 7, 11)
@@ -237,3 +239,109 @@ if duplicate(lst):
 else:
     adition = sum(lst)
     print(adition)
+
+# Checking if any array contains a non zero element
+my_arr = np.array([1, "h", 0, 0])
+
+my_arr2 = np.array([0, 0, 0, 0])
+
+# Any function helps in checking if array contains non zero elements.
+print(my_arr.any())
+print(my_arr2.any())
+
+
+# Any checks if any one element is non zero. Whereas all checks all element should be non zero then it returns true 4
+
+print(np.isnan(my_arr))
+
+print(np.info(np.inf))
+
+
+calories = {"day1": 420, "day2": 380, "day3": 390}
+mydataset = {"cars": ["BMW", "Volvo", "Ford"], "passings": [3, 7, 2]}
+
+obj = pd.DataFrame(mydataset)
+print(pd.DataFrame(obj))
+
+
+data = {
+    "calories": [420, 380, 390],
+    "duration": [50, 40, 45],
+    "durations": [50, 40, 45],
+    "durationss": [50, 40, 45],
+    "durationsss": [50, 40, 45],
+}
+
+# load data into a DataFrame object:
+df = pd.DataFrame(data)
+
+print(df.loc[:2])
+
+
+my_data_file = pd.read_csv("data.csv")
+
+
+print(my_data_file)
+
+
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        self.ransomNote = ransomNote
+        self.magazine = magazine
+
+        for character in ransomNote:
+            if character in magazine:
+                magazine = magazine.replace(character, "x", 1)
+                print(magazine)
+
+
+a = Solution()
+a.canConstruct("abdc", "abgghc")
+
+
+class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+
+
+hassam = Student("hassam", 24, "A")
+
+print(hassam.toString())
+
+my_df = pd.read_csv("data.csv")
+
+my_df.fillna(130, inplace=True)
+
+print(my_df.to_string())
+
+
+df = pd.read_csv("another_dataset.csv")
+
+
+# Convert 'Date' column to datetime format
+df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+
+# Print the DataFrame
+print(df.to_string())
+
+
+df = pd.read_csv("data.csv")
+
+x = df["Calories"].mode()[0]
+
+df["Calories"].fillna(x, inplace=True)
+
+df = pd.read_csv("another_dataset.csv")
+
+df["Date"] = pd.to_datetime(df["Date"], format="mixed")
+
+print(df.to_string())
+
+
+df = pd.read_csv("data.csv")
+
+df.plot()
+
+plt.show()
